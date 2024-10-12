@@ -40,11 +40,9 @@ int main()
         is_prime = true;
         for (int d = 2; d <= sqrt(arr[i]); d++)
         {
-            if (arr[i] % d == 0) {
-                is_prime = false;
-                }
+            if (arr[i] % d == 0) {is_prime = false;}
         }
-        if (is_prime) {cout << arr[i]; break;}
+        if (is_prime || arr[i] != 1) {break;}
     }
 
     if (is_prime) 
@@ -60,7 +58,7 @@ int main()
             int max_pos = i;
             for(int j = i+1; j < n; j++)
             {
-                if (arr[j] > arr[i]) {max_pos = j;}
+                if (arr[j] > arr[max_pos]) {max_pos = j;}
             }
             swap(arr[i], arr[max_pos]);
         }
@@ -164,8 +162,7 @@ int main()
         }
         cout << endl;
     }
-    // 4 
-    int n;
+    //4 
     cout << "4." << endl << "Enter the size of an array: "; cin >> n;
     int Max_N = 20000;
     int arr3[Max_N];
